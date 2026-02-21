@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>軍議（2Dシミュレーター）</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>軍議 -GUNGI-</h1>
+            <div class="controls">
+                <div id="turn-display">手番: <span id="current-player" class="black-turn">先手（黒）</span></div>
+                <button id="manual-btn">📖 説明書（コマの動き）</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="board" class="board"></div>
+        </main>
+    </div>
+
+    <div id="manual-modal" class="modal hidden">
+        <div class="modal-content">
+            <span id="close-btn" class="close">&times;</span>
+            <h2>コマの動かし方</h2>
+            <p>※ 先手（黒）は下から上へ、後手（白）は上から下へ進みます。</p>
+            <ul class="piece-manual">
+                <li><strong>帥（スイ）:</strong> 王将。周囲8マスのどこにでも1マス進める。</li>
+                <li><strong>兵（ヒョウ）:</strong> 歩兵。前方に1マスだけ進める。</li>
+                <li><strong>忍（シノビ）:</strong> 前後左右の4方向に1マス進める。</li>
+                <li><strong>砦（トリデ）:</strong> 飛車。前後左右の4方向に、他のコマにぶつかるまで何マスでも進める。</li>
+                <li><strong>筒（ツツ）:</strong> 香車＋後退。前後（縦方向）に、他のコマにぶつかるまで何マスでも進める。</li>
+                <li><strong>中（チュウ）:</strong> 斜め4方向に1マス進める。</li>
+            </ul>
+            <p><strong>【遊び方】</strong><br>
+            自分の手番のコマをクリックすると、移動可能なマスが黄色く光ります。<br>
+            光ったマスをクリックすると移動（または相手コマを取る）し、相手のターンに移ります。</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
